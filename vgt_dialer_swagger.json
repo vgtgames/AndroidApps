@@ -1,0 +1,527 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "VGT Dialer Mobile API",
+        "description": "VoiceGate India documents for Dialer API",
+        "version": "1.0.4 200523",
+        "termsOfService": "http://www.voicegateindia.com/",
+        "contact": {
+            "email": "sudarshan@voicegateindia.com"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/Dial/": {
+            "put": {
+                "tags": [
+                    "Dial"
+                ],
+                "description": "create2 Dial2",
+                "operationId": "DialController.Put",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Dial content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Dial"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.DialResp"
+                        }
+                    },
+                    "201": {
+                        "description": "{object} models.DialResp"
+                    }
+                }
+            }
+        },
+        "/agent/{agentid}/{sessionid}": {
+            "get": {
+                "tags": [
+                    "agent"
+                ],
+                "description": "get Agent by agentid,sessionid",
+                "operationId": "AgentController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "agentid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sessionid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Agent"
+                        }
+                    },
+                    "201": {
+                        "description": ":{object} models.AgentResp"
+                    }
+                }
+            }
+        },
+        "/agentmisedcall/{id}/{sessionid}": {
+            "get": {
+                "tags": [
+                    "agentmisedcall"
+                ],
+                "description": "get Agentmissedcall by id",
+                "operationId": "AgentmissedcallController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sessionid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentmissedcallRsp"
+                        }
+                    },
+                    "403": {
+                        "description": "{object} models.AgentmissedcallRsp"
+                    }
+                }
+            }
+        },
+        "/agentremark/": {
+            "post": {
+                "tags": [
+                    "agentremark"
+                ],
+                "description": "create Agentremark",
+                "operationId": "AgentremarkController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Agentremark content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Agentremark"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentStatusResp"
+                        }
+                    },
+                    "201": {
+                        "description": "{object} models.AgentStatusResp"
+                    }
+                }
+            }
+        },
+        "/agentstatus/{agentid}": {
+            "put": {
+                "tags": [
+                    "agentstatus"
+                ],
+                "description": "update the AgentStatus",
+                "operationId": "AgentStatusController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "agentid",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for AgentStatus content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentStatusResp"
+                        }
+                    },
+                    "201": {
+                        "description": "{object} models.AgentStatusResp"
+                    }
+                }
+            }
+        },
+        "/agentstatus/{agentid}/{sessionid}": {
+            "get": {
+                "tags": [
+                    "agentstatus"
+                ],
+                "description": "get AgentStatus by agentid,sessionid",
+                "operationId": "AgentStatusController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "agentid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sessionid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentStatus"
+                        }
+                    },
+                    "201": {
+                        "description": "{object} models.AgentStatusResp"
+                    }
+                }
+            }
+        },
+        "/customer/{agentid}/{sessionid}/": {
+            "get": {
+                "tags": [
+                    "customer"
+                ],
+                "description": "get Customer by id,sessionid",
+                "operationId": "CustomerController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "agentid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sessionid",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Customer"
+                        }
+                    },
+                    "201": {
+                        "description": "{object} models.Customer"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Agent": {
+            "title": "Agent",
+            "type": "object",
+            "properties": {
+                "AgentID": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AgentType": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Cuserid": {
+                    "type": "string"
+                },
+                "Did_in": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Did_out": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Extension": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Extension1": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Extension2": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "MailID": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SessionID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.AgentStatus": {
+            "title": "AgentStatus",
+            "type": "object",
+            "properties": {
+                "AgentID": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Extension": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Login": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Mode": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SessionID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.AgentStatusResp": {
+            "title": "AgentStatusResp",
+            "type": "object",
+            "properties": {
+                "Error_code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Error_message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AgentmissedcallRsp": {
+            "title": "AgentmissedcallRsp",
+            "type": "object",
+            "properties": {
+                "Data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.AgentmissedcallRspSt"
+                    }
+                },
+                "Error_code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Error_message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AgentmissedcallRspSt": {
+            "title": "AgentmissedcallRspSt",
+            "type": "object",
+            "properties": {
+                "Customernumber": {
+                    "type": "string"
+                },
+                "Instime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Agentremark": {
+            "title": "Agentremark",
+            "type": "object",
+            "properties": {
+                "AgentID": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Customernumber": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Disposition1": {
+                    "type": "string"
+                },
+                "Disposition2": {
+                    "type": "string"
+                },
+                "Remark": {
+                    "type": "string"
+                },
+                "SessionID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Customer": {
+            "title": "Customer",
+            "type": "object",
+            "properties": {
+                "CustNumber": {
+                    "type": "string"
+                },
+                "Error_code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Error_message": {
+                    "type": "string"
+                },
+                "FirstName": {
+                    "type": "string"
+                },
+                "LastName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Dial": {
+            "title": "Dial",
+            "type": "object",
+            "properties": {
+                "AgentID": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Called_no": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Extension": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SessionID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.DialResp": {
+            "title": "DialResp",
+            "type": "object",
+            "properties": {
+                "Error_code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Error_message": {
+                    "type": "string"
+                },
+                "TransID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.LoginResp": {
+            "title": "LoginResp",
+            "type": "object",
+            "properties": {
+                "Error_code": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Error_message": {
+                    "type": "string"
+                },
+                "SessionID": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.User": {
+            "title": "User",
+            "type": "object",
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "agentstatus",
+            "description": " AgentStatusController operations for AgentStatus\n"
+        },
+        {
+            "name": "agent",
+            "description": "AgentController operations for Agent\n"
+        },
+        {
+            "name": "Dial",
+            "description": "Dial Controller operations for Dial\n"
+        },
+        {
+            "name": "customer",
+            "description": "CustomerController operations for Customer\n"
+        },
+        {
+            "name": "agentremark",
+            "description": " AgentremarkController operations for Agentremark\n"
+        },
+        {
+            "name": "agentmisedcall",
+            "description": " AgentmissedcallController operations for Agentmissedcall\n"
+        }
+    ]
+}
